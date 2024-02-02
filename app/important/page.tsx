@@ -1,15 +1,15 @@
 "use client";
-import React from 'react'
-import { useGlobalState } from '../context/GlobalContextProvider';
+import React, { useContext } from 'react'
+import { GlobalContext } from '../context/GlobalContextProvider';
 import Tasks from '../components/Tasks/Tasks';
 
-function page() {
+function Important() {
 
-const {importantTasks} = useGlobalState();
+const {importantTasks} = useContext(GlobalContext);
 
   return (
     <Tasks title='Important Tasks' tasks={importantTasks} />
   )
 }
 
-export default page
+export default Important
